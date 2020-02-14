@@ -57,8 +57,8 @@ def draw_pitch(pitch):
     # replace unvoiced samples by NaN to not plotpip install py2exe
     pitch_values = pitch.selected_array['frequency']
     pitch_values[pitch_values==0] = np.nan
-    plt.plot(pitch.xs(), pitch_values, linewidth=3, color='w')
-    # plt.plot(pitch.xs(), pitch_values, linewidth=3)
+    # plt.plot(pitch.xs(), pitch_values, linewidth=3, color='w')
+    plt.plot(pitch.xs(), pitch_values, linewidth=3)
     plt.grid(False)
     plt.axis('off')
     # plt.ylim(0, pitch.ceiling)
