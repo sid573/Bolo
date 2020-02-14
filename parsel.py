@@ -50,7 +50,7 @@ def draw_intensity(intensity):
     plt.plot(intensity.xs(), cur, linewidth=1)
     plt.grid(False)
     plt.ylim(0)
-    plt.ylabel("intensity [dB]")
+    plt.ylabel("intensity [dB]")0
 
 def draw_pitch(pitch):
     # Extract selected pitch contour, and
@@ -58,10 +58,11 @@ def draw_pitch(pitch):
     pitch_values = pitch.selected_array['frequency']
     pitch_values[pitch_values==0] = np.nan
     plt.plot(pitch.xs(), pitch_values, linewidth=3, color='w')
-    plt.plot(pitch.xs(), pitch_values, linewidth=3)
-    # plt.grid(False)
+    # plt.plot(pitch.xs(), pitch_values, linewidth=3)
+    plt.grid(False)
     # plt.ylim(0, pitch.ceiling)
     # plt.ylabel("fundamental frequency [Hz]")
+
 
 def bolo_host(gender,choice):
     sns.set()
@@ -90,9 +91,9 @@ def bolo_host(gender,choice):
 
     plt.figure()
     draw_pitch(test_pitch)
-    draw_pitch(refer_pitch)
+    # draw_pitch(refer_pitch)
     plt.xlim([test_parsel.xmin, test_parsel.xmax])
-    plt.suptitle('Pitch', fontsize=16)
+    # plt.suptitle('Pitch', fontsize=16)
 
 
     refer_intensity_norm =refer_intensity.values.T /np.mean (refer_intensity.values.T)
@@ -153,7 +154,7 @@ def bolo_host(gender,choice):
 
     # plt.show()
     pic_IObytes = io.BytesIO()
-    plt.savefig(pic_IObytes,  format='png')
+    plt.savefig(pic_IObytes,  format='eps')
     pic_IObytes.seek(0)
     pic_hash = base64.b64encode(pic_IObytes.read())
     return pic_hash
