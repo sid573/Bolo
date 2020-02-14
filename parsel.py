@@ -59,9 +59,9 @@ def draw_pitch(pitch):
     pitch_values[pitch_values==0] = np.nan
     plt.plot(pitch.xs(), pitch_values, linewidth=3, color='w')
     plt.plot(pitch.xs(), pitch_values, linewidth=3)
-    plt.grid(False)
-    plt.ylim(0, pitch.ceiling)
-    plt.ylabel("fundamental frequency [Hz]")
+    # plt.grid(False)
+    # plt.ylim(0, pitch.ceiling)
+    # plt.ylabel("fundamental frequency [Hz]")
 
 def bolo_host(gender,choice):
     sns.set()
