@@ -60,6 +60,7 @@ def draw_pitch(pitch):
     plt.plot(pitch.xs(), pitch_values, linewidth=3, color='w')
     # plt.plot(pitch.xs(), pitch_values, linewidth=3)
     plt.grid(False)
+    plt.axis('off')
     # plt.ylim(0, pitch.ceiling)
     # plt.ylabel("fundamental frequency [Hz]")
 
