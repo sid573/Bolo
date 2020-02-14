@@ -50,7 +50,7 @@ def draw_intensity(intensity):
     plt.plot(intensity.xs(), cur, linewidth=1)
     plt.grid(False)
     plt.ylim(0)
-    plt.ylabel("intensity [dB]")0
+    plt.ylabel("intensity [dB]")
 
 def draw_pitch(pitch):
     # Extract selected pitch contour, and
@@ -154,7 +154,7 @@ def bolo_host(gender,choice):
 
     # plt.show()
     pic_IObytes = io.BytesIO()
-    plt.savefig(pic_IObytes,  format='eps')
+    plt.savefig(pic_IObytes,  format='svg')
     pic_IObytes.seek(0)
     pic_hash = base64.b64encode(pic_IObytes.read())
     return pic_hash
