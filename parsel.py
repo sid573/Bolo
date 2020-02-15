@@ -58,7 +58,7 @@ def draw_pitch(pitch):
     pitch_values = pitch.selected_array['frequency']
     pitch_values[pitch_values==0] = np.nan
     # plt.plot(pitch.xs(), pitch_values, linewidth=3, color='w')
-    plt.plot(pitch.xs(), pitch_values, linewidth=3)
+    plt.plot(pitch.xs(), pitch_values, linewidth=3, )
     plt.grid(False)
     plt.axis('off')
     # plt.ylim(0, pitch.ceiling)
@@ -155,7 +155,7 @@ def bolo_host(gender,choice):
 
     # plt.show()
     pic_IObytes = io.BytesIO()
-    plt.savefig(pic_IObytes,  format='svg')
+    plt.savefig(pic_IObytes,  format='png')
     pic_IObytes.seek(0)
     pic_hash = base64.b64encode(pic_IObytes.read())
     return pic_hash
