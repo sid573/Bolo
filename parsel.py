@@ -160,7 +160,7 @@ def bolo_host(gender,choice,filename):
     pic_IObytes.seek(0)
     pic_hash = base64.b64encode(pic_IObytes.read())
     dic = {}
-    dic['image'] = str(pic_hash)
+    dic['image'] = pic_hash.decode()
     dic['pitch'] = diff_pitch_post
     dic['intensity'] = diff_intensity_post
     # print(dic)
