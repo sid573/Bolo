@@ -65,13 +65,13 @@ def draw_pitch(pitch):
     # plt.ylabel("fundamental frequency [Hz]")
 
 
-def bolo_host(gender,choice):
+def bolo_host(gender,choice,filename):
     sns.set()
     plt.rcParams['figure.dpi'] = 100
     gender = gender.upper()
 
     referfile="./AudioClips/"+gender+"_"+file[int(choice)-1]+".wav"
-    testfile="output.wav"
+    testfile=filename
 
     # record(testfile,rec_time[int(choice)-1])
 
