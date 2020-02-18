@@ -1,4 +1,4 @@
-from flask import Flask, flash, request, redirect, url_for
+from flask import Flask, flash, request, redirect, url_for, jsonify
 from parsel import * 
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
@@ -17,7 +17,8 @@ def uploadfile():
         y = bolo_host("M",1,f.filename)
         return y
     elif request.method == 'GET':
-        return "hello"
+        y = bolo_host("M",1,"output.wav")
+        return y
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)

@@ -8,6 +8,7 @@ import seaborn as sns
 from dtw import dtw
 import base64
 import io 
+import json
 
 
 
@@ -158,4 +159,10 @@ def bolo_host(gender,choice,filename):
     plt.savefig(pic_IObytes,  format='png')
     pic_IObytes.seek(0)
     pic_hash = base64.b64encode(pic_IObytes.read())
-    return pic_hash
+    dic = {}
+    dic['image'] = str(pic_hash)
+    dic['pitch'] = diff_pitch_post
+    dic['intensity'] = diff_intensity_post
+    # print(dic)
+    # print (json.dumps(dic))
+    return json.dumps(dic)
